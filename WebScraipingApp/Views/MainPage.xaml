@@ -9,19 +9,22 @@
     mvvm:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox Text="{x:Bind _viewModel.Input, Mode=TwoWay}" />
-        <Button Content="Create Message" Command="{x:Bind _viewModel.CreateOutputCommand}" />
-        <TextBlock Text="{x:Bind _viewModel.Output, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" />
-
-        <Button Content="Navigate"/>
-
-        <TextBlock Text="ソース内容解析" Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,24,0,0" />
-        <TextBox Text="{x:Bind _viewModel.SourceUrl, Mode=TwoWay}" PlaceholderText="https://example.com" />
-        <Button Content="解析する" Command="{x:Bind _viewModel.AnalyzeSourceCommand}" />
-        <ProgressRing IsActive="{x:Bind _viewModel.IsAnalyzing, Mode=OneWay}" />
-        <TextBlock Text="{x:Bind _viewModel.AnalysisStatus, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" />
-
-        <TextBlock Text="{x:Bind _viewModel.AnalysisSummary, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" />
-    </StackPanel>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"
+                  HorizontalContentAlignment="Stretch">
+        <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+            <TextBox Text="{x:Bind _viewModel.Input, Mode=TwoWay}" />
+            <Button Content="Create Message" Command="{x:Bind _viewModel.CreateOutputCommand}" />
+            <TextBlock Text="{x:Bind _viewModel.Output, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" />
+    
+            <Button Content="Navigate"/>
+    
+            <TextBlock Text="ソース内容解析" Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,24,0,0" />
+            <TextBox Text="{x:Bind _viewModel.SourceUrl, Mode=TwoWay}" PlaceholderText="https://example.com" />
+            <Button Content="解析する" Command="{x:Bind _viewModel.AnalyzeSourceCommand}" />
+            <ProgressRing IsActive="{x:Bind _viewModel.IsAnalyzing, Mode=OneWay}" />
+            <TextBlock Text="{x:Bind _viewModel.AnalysisStatus, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" />
+    
+            <TextBlock Text="{x:Bind _viewModel.AnalysisSummary, Mode=OneWay}" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="Wrap" />
+        </StackPanel>
+    </ScrollViewer>
 </Page>

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.13.0" />
+    <Compile Include="../../WebScraipingApp/Services/SourceAnalysisService.cs" Link="SourceAnalysisService.cs" />
+    <Compile Include="../../WebScraipingApp/Services/ISourceAnalysisService.cs" Link="ISourceAnalysisService.cs" />
+    <Compile Include="../../WebScraipingApp/Models/SourceAnalysisResult.cs" Link="SourceAnalysisResult.cs" />
+  </ItemGroup>
+</Project>
